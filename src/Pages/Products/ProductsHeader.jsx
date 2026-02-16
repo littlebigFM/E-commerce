@@ -1,0 +1,75 @@
+import SearchBar from "../../Components/Seachbar/SearchBar";
+import { RiFilter3Fill } from "react-icons/ri";
+import { FiDownload, FiPlus } from "react-icons/fi";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+// import { nav } from "framer-motion/client";
+
+const ProductsHeader = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="flex items-center justify-between w-full">
+      <div className="hidden min-[950px]:flex">
+        <SearchBar placeholder="Search product" />
+      </div>
+
+      <div className="flex gap-2 max-[950px]:justify-between max-[950px]:w-full">
+        <div className="flex gap-2">
+          <div
+            className="
+        flex 
+        items-center 
+        gap-1
+        border border-[#B0B0B0] dark:border-[#B0B0B0]
+        text-[#454545] dark:text-[#F6F6F6]
+        rounded-[12px]
+        font-bold text-[12px]
+        p-2
+        cursor-pointer
+        "
+          >
+            <p>Filter</p>
+            <RiFilter3Fill className="text-[20px]" />
+          </div>
+
+          <div
+            className=" flex 
+        items-center 
+        gap-1
+        border border-[#B0B0B0] dark:border-[#B0B0B0]
+        text-[#454545] dark:text-[#F6F6F6]
+        rounded-[12px]
+        font-bold text-[12px]
+        p-2
+        cursor-pointer
+        "
+          >
+            <p>Export</p>
+            <FiDownload className="text-[20px]" />
+          </div>
+        </div>
+
+        <div
+          className="
+        flex 
+        items-center
+        gap-1
+        bg-[#1A71F6] 
+        text-[#FFFFFF] dark:text-[#F6F6F6]
+        rounded-[12px]
+        font-bold text-[12px]
+        p-2
+        cursor-pointer
+        "
+          onClick={() => navigate("/ProductsPage/AddProduct")}
+        >
+          <p>New Product</p>
+          <FiPlus className="text-[20px]" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductsHeader;
