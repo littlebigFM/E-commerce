@@ -1,5 +1,5 @@
 import React from "react";
-import GoogleIcon from "@/assets/icons/google.svg?react";
+import GoogleIcon from "../../../assets/Icons/google.svg";
 
 const GoogleAuthButton = ({ text }) => {
   return (
