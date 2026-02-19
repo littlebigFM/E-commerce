@@ -1,5 +1,5 @@
 import React from "react";
-import GoogleIcon from "../../../assets/Icons/google.svg";
+// import GoogleIcon from "../../../assets/Icons/google.svg";
 
 const GoogleAuthButton = ({ text }) => {
   return (
@@ -19,9 +19,7 @@ const GoogleAuthButton = ({ text }) => {
     dark:bg-white
     "
     >
-      <div>
-        <GoogleIcon />
-      </div>
+      <div>{/* <GoogleIcon /> */}</div>
       <div
         className="
       text-[#1A71F6]

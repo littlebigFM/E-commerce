@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import { nav } from "framer-motion/client";
 
 const ProductsHeader = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="flex items-center justify-between w-full">
@@ -50,7 +50,8 @@ const ProductsHeader = () => {
           </div>
         </div>
 
-        <div
+        <Link
+          to="/ProductsPage/AddProduct"
           className="
         flex 
         items-center
@@ -62,11 +63,11 @@ const ProductsHeader = () => {
         p-2
         cursor-pointer
         "
-          onClick={() => navigate("/ProductsPage/AddProduct")}
+          // onClick={() => navigate("/ProductsPage/AddProduct")}
         >
           <p>New Product</p>
           <FiPlus className="text-[20px]" />
-        </div>
+        </Link>
       </div>
     </div>
   );

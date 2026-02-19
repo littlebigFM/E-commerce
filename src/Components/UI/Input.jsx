@@ -1,15 +1,8 @@
 import React from "react";
 
-const Input = ({
-  type = "text",
-  label,
-  value,
-  onChange,
-  name,
-  placeholder,
-}) => {
+const Input = ({ type, label, value, onChange, name, placeholder }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 w-full">
       {label && (
         <label
           htmlFor={name}
@@ -25,7 +18,7 @@ const Input = ({
         name={name}
         placeholder={placeholder}
         className="px-4 py-3
-        border-[1.6px] border-[#D1D1D1] 
+        border-[1.6px] border-[#D1D1D1] dark:border-[#3D3D3D]
         rounded-[12px]
         w-full
         text-[14px] text-[#454545] font-bold dark:text-white

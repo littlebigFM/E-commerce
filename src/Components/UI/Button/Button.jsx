@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ className, text }) => {
+const Button = ({ className, text, onClick }) => {
   return (
     <div>
       <div
@@ -11,6 +11,7 @@ const Button = ({ className, text }) => {
           cursor-pointer
           ${className}
           `}
+        onClick={onClick}
       >
         {text}
       </div>
