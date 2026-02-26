@@ -39,7 +39,7 @@ const mockProducts = [
 
 const mockProductsTwo = [
   {
-    id: "SKU-01",
+    id: "02131",
     name: "Adidas Hoodie",
     image: "https://via.placeholder.com/40",
     customer: "Leslie Alexander",

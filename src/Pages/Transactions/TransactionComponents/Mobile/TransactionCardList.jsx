@@ -1,7 +1,7 @@
 import React from "react";
-import { ProductCard } from "./ProductCard";
+import { TransactionCard } from "./TransactionCard";
 
-const ProductCardList = ({ products, loading, type }) => {
+const TransactionCardList = ({ loading, productsTwo }) => {
   if (loading) {
     return (
       <p className="flex items-center justify-center text-[#737373] dark:text-[#B0B0B0]">
@@ -10,7 +10,7 @@ const ProductCardList = ({ products, loading, type }) => {
     );
   }
 
-  if (!products.length) {
+  if (!productsTwo.length) {
     return (
       <p className="flex items-center justify-center text-[#737373] dark:text-[#B0B0B0]">
         No products found{" "}
@@ -34,12 +34,12 @@ const ProductCardList = ({ products, loading, type }) => {
       </div>
 
       <div>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} type={type} />
+        {productsTwo.map((product) => (
+          <TransactionCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
 };
 
-export default ProductCardList;
+export default TransactionCardList;

@@ -4,7 +4,7 @@ import Detail from "./Detail";
 import ProductActions from "../Desktop/ProductActions";
 import ProductMobileModal from "./ProductMobileModal";
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, type }) => {
   const [open, setOpen] = useState(false);
 
   const statusStyles = {
@@ -22,38 +22,77 @@ export const ProductCard = ({ product }) => {
       justify-between
       "
       >
-        <div className="flex items-start gap-2">
-          <input type="checkbox" className="mt-1" />
+        {type === "product" && (
+          <div className="flex items-start gap-2">
+            <input type="checkbox" className="mt-1" />
 
-          <div className="flex flex-col gap-3">
-            <div
-              className="flex gap-2 cursor-pointer"
-              onClick={() => setOpen(!open)}
-            >
+            <div className="flex flex-col gap-3">
               <div
-                className="
+                className="flex gap-2 cursor-pointer"
+                onClick={() => setOpen(!open)}
+              >
+                <div
+                  className="
           bg-[#F6F6F6] 
           w-[42px] h-[42px] 
           rounded-[6px]
           "
-              >
-                <img src={product.img} className="" alt="" />
+                >
+                  <img src={product.img} className="" alt="" />
+                </div>
+
+                <div className="text-[14px]">
+                  <p className="text-[#1A71F6]">{product.id}</p>
+                  <p className="dark:text-[#F6F6F6]">{product.name}</p>
+                </div>
               </div>
 
-              <div className="text-[14px]">
-                <p className="text-[#1A71F6]">{product.id}</p>
-                <p className="dark:text-[#F6F6F6]">{product.name}</p>
-              </div>
+              {open && (
+                <ProductMobileModal
+                  product={product}
+                  statusStyles={statusStyles}
+                />
+              )}
             </div>
-
-            {open && (
-              <ProductMobileModal
-                product={product}
-                statusStyles={statusStyles}
-              />
-            )}
           </div>
-        </div>
+        )}
+
+        {type === "transaction" && (
+          <div className="flex items-start gap-2">
+            <input type="checkbox" className="mt-1" />
+
+            <div className="flex flex-col gap-3">
+              <div
+                className="flex gap-2 cursor-pointer"
+                onClick={() => setOpen(!open)}
+              >
+                <div
+                  className="
+          bg-[#F6F6F6] 
+          w-[42px] h-[42px] 
+          rounded-[6px]
+          "
+                >
+                  <img src={product.img} className="" alt="" />
+                </div>
+
+                <div className="text-[14px]">
+                  <p className="text-[#1A71F6]">{product.id}</p>
+                  <p className="dark:text-[#F6F6F6]">{product.name}</p>
+                </div>
+              </div>
+
+              {open && (
+                <ProductMobileModal
+                  product={product}
+                  statusStyles={statusStyles}
+                />
+              )}
+            </div>
+          </div>
+        )}
+
+        {type === "customer" && <div></div>}
 
         <button
           onClick={() => setOpen(!open)}

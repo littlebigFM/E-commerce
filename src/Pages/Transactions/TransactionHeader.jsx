@@ -1,13 +1,10 @@
-import SearchBar from "../../Components/Seachbar/SearchBar";
+import React from "react";
 import { RiFilter3Fill } from "react-icons/ri";
+import SearchBar from "../../Components/Seachbar/SearchBar";
 import { FiDownload, FiPlus } from "react-icons/fi";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-// import { nav } from "framer-motion/client";
+import { Link } from "react-router-dom";
 
-const ProductsHeader = ({ type }) => {
-  // const navigate = useNavigate();
-
+const TransactionHeader = () => {
   return (
     <div className="flex items-center justify-between w-full">
       <div className="hidden min-[950px]:flex">
@@ -50,10 +47,9 @@ const ProductsHeader = ({ type }) => {
           </div>
         </div>
 
-        {type === "product" && (
-          <Link
-            to="/ProductsPage/AddProduct"
-            className="
+        <Link
+          to="/transaction/AddProduct"
+          className="
         flex 
         items-center
         gap-1
@@ -64,54 +60,13 @@ const ProductsHeader = ({ type }) => {
         p-2
         cursor-pointer
         "
-          >
-            <p>New Product</p>
-            <FiPlus className="text-[20px]" />
-          </Link>
-        )}
-
-        {type === "transaction" && (
-          <Link
-            to="/transaction/AddProduct"
-            className="
-        flex 
-        items-center
-        gap-1
-        bg-[#1A71F6] 
-        text-[#FFFFFF] dark:text-[#F6F6F6]
-        rounded-[12px]
-        font-bold text-[12px]
-        p-2
-        cursor-pointer
-        "
-          >
-            <p>New Order</p>
-            <FiPlus className="text-[20px]" />
-          </Link>
-        )}
-
-        {type === "customer" && (
-          <Link
-            to="/customers/AddProduct"
-            className="
-        flex 
-        items-center
-        gap-1
-        bg-[#1A71F6] 
-        text-[#FFFFFF] dark:text-[#F6F6F6]
-        rounded-[12px]
-        font-bold text-[12px]
-        p-2
-        cursor-pointer
-        "
-          >
-            <p>Add Customer</p>
-            <FiPlus className="text-[20px]" />
-          </Link>
-        )}
+        >
+          <p>New Order</p>
+          <FiPlus className="text-[20px]" />
+        </Link>
       </div>
     </div>
   );
 };
 
-export default ProductsHeader;
+export default TransactionHeader;
