@@ -1,18 +1,26 @@
 import React, { useState } from "react";
-// import { IoMdArrowDropright } from "react-icons/io";
-// import useProducts from "./../Hooks/useProduct";
-
 import CustomerHeader from "./CustomerHeader";
+import { IoMdArrowDropright } from "react-icons/io";
+import useProducts from "../Transactions/Hooks/useProduct";
+import CustomerTable from "./CustomerComponents/Desktop/CustomerTable";
+import CustomerCardList from "./CustomerComponents/Mobile/CustomerCardList";
 
 const Customers = ({ type }) => {
   // const [category, setCategory] = useState("Sneakers");
-  const [categoryTwo, setCategoryTwo] = useState("All Orders");
+  // const [categoryTwo, setCategoryTwo] = useState("All Orders");
+  const [categoryThree, setcategoryThree] = useState("Customer");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
-  const { products, productsTwo, loading } = useProducts({
-    categoryTwo,
-    category,
+  const {
+    // products,
+    //  productsTwo,
+    productsThree,
+    loading,
+  } = useProducts({
+    // categoryTwo,
+    // category,
+    categoryThree,
     page,
     search,
   });
@@ -29,11 +37,7 @@ const Customers = ({ type }) => {
           <span>
             <IoMdArrowDropright />
           </span>
-          Orders{" "}
-          <span>
-            <IoMdArrowDropright />
-          </span>{" "}
-          <span className="font-bold text-[#1A71F6]">{categoryTwo}</span>
+          <span className="font-bold text-[#1A71F6]">{categoryThree}</span>
         </p>
       </div>
 
@@ -48,7 +52,7 @@ const Customers = ({ type }) => {
       "
       >
         <div className="hidden min-[950px]:flex">
-          {/* <CustomerHeader /> */}
+          <CustomerHeader />
         </div>
 
         {/* <div>
@@ -61,22 +65,22 @@ const Customers = ({ type }) => {
           />
         </div> */}
 
-        {/* <div className="min-[950px]:hidden">
-          <ProductsHeader type={type} />
-        </div> */}
+        <div className="min-[950px]:hidden">
+          <CustomerHeader />
+        </div>
 
-        {/* <div className="hidden min-[950px]:block">
-          <ProductTable
-            products={products}
-            productsTwo={productsTwo}
+        <div className="hidden min-[950px]:block">
+          <CustomerTable
+            // products={products}
+            // productsTwo={productsTwo}
+            productsThree={productsThree}
             loading={loading}
-            type={type}
           />
-        </div> */}
+        </div>
 
-        {/* <div className="block min-[950px]:hidden">
-          <ProductCardList products={products} loading={loading} type={type} />
-        </div> */}
+        <div className="block min-[950px]:hidden">
+          <CustomerCardList productsThree={productsThree} loading={loading} />
+        </div>
 
         {/* <div>
           <ProductPagination page={page} onChange={setPage} />

@@ -1,10 +1,16 @@
 import React from "react";
+import SearchBar from "../../Components/Seachbar/SearchBar";
+import { RiFilter3Fill } from "react-icons/ri";
+import { FiDownload, FiPlus } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
 
 const CustomerHeader = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center justify-between w-full">
       <div className="hidden min-[950px]:flex">
-        <SearchBar placeholder="Search product" />
+        <SearchBar placeholder="Search Customer" />
       </div>
 
       <div className="flex gap-2 max-[950px]:justify-between max-[950px]:w-full">
@@ -44,7 +50,8 @@ const CustomerHeader = () => {
         </div>
 
         <Link
-          to="/transaction/AddProduct"
+          to="/Customers/AddProduct"
+          // onClick={navigate("/Customers/AddProduct")}
           className="
         flex 
         items-center
@@ -57,7 +64,7 @@ const CustomerHeader = () => {
         cursor-pointer
         "
         >
-          <p>New Order</p>
+          <p>Add Customer</p>
           <FiPlus className="text-[20px]" />
         </Link>
       </div>

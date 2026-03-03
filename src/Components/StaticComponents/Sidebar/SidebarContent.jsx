@@ -31,7 +31,7 @@ const SidebarContent = ({ isDark, setIsDark }) => {
       >
         <p className="text-[#727272] dark:text-[#737373]">General</p>
 
-        <SidebarItem label="Dashboard" to="/" icon={<FiHome />} />
+        <SidebarItem label="Dashboard" to="/Dashboard" icon={<FiHome />} />
 
         <SidebarItem
           label="Product"

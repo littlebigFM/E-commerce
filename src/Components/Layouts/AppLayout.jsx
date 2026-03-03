@@ -37,7 +37,6 @@ const AppLayout = () => {
           className="w-full 
        min-[620px]:ml-[280px] 
        min-[620px]:overflow-y-auto
-        
         "
         >
           {/* ================= NAVBAR ================= */}

@@ -1,9 +1,9 @@
 import React from "react";
 
 const tabsTwo = [
-  { key: "All Orders", label: "All Orders (441)" },
-  { key: "Shipping", label: "Shipping (100)" },
-  { key: "Completed", label: "Completed (300)" },
+  { key: "All Orders", label: "All Orders (41)" },
+  { key: "Shipping", label: "Shipping (10)" },
+  { key: "Completed", label: "Completed (30)" },
   { key: "Cancel", label: "Cancel (41)" },
 ];
 
@@ -34,6 +34,7 @@ const TransactionTabs = ({
             text-sm rounded-lg
             w-full
             font-bold
+            text-[12px]
             cursor-pointer
             ${
               categoryTwo === tabTwo.key

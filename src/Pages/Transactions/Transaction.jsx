@@ -13,7 +13,7 @@ const Transaction = () => {
   // const [search, setSearch] = useState("");
   // const [page, setPage] = useState(1);
 
-  const { products, productsTwo, loading } = useProducts({
+  const { productsTwo, loading } = useProducts({
     categoryTwo,
     // category,
     // page,
@@ -69,21 +69,11 @@ const Transaction = () => {
         </div>
 
         <div className="hidden min-[950px]:block">
-          <TransactionTable
-            // products={products}
-            productsTwo={productsTwo}
-            loading={loading}
-            // type={type}
-          />
+          <TransactionTable productsTwo={productsTwo} loading={loading} />
         </div>
 
         <div className="block min-[950px]:hidden">
-          <TransactionCardList
-            // products={products}
-            productsTwo={productsTwo}
-            loading={loading}
-            // type={type}
-          />
+          <TransactionCardList productsTwo={productsTwo} loading={loading} />
         </div>
 
         {/* <div>

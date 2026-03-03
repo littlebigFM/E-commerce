@@ -218,7 +218,7 @@ const Authform = ({
               )}
               {type === "register" && (
                 <span className="text-[#1A71F6]">
-                  <Link to="/Login">{textsix}</Link>
+                  <Link to="/">{textsix}</Link>
                 </span>
               )}
             </p>

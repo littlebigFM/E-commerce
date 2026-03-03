@@ -51,9 +51,30 @@ const mockProductsTwo = [
   },
 ];
 
-const useProducts = ({ category, categoryTwo, page, search }) => {
+const mockProductsThree = [
+  {
+    id: "02131",
+    name: "Leslie Alexander",
+    image: "https://via.placeholder.com/40",
+    contact: "+1 819 314 1435",
+    purchases: 80,
+    orderQty: "30 Orders",
+    address: "Santa Ana, Illinois",
+    categoryThree: "Customer",
+    // status: "shipping",
+  },
+];
+
+const useProducts = ({
+  category,
+  categoryTwo,
+  categoryThree,
+  page,
+  search,
+}) => {
   const [products, setProducts] = useState([]);
   const [productsTwo, setProductsTwo] = useState([]);
+  const [productsThree, setProductsThree] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -62,6 +83,11 @@ const useProducts = ({ category, categoryTwo, page, search }) => {
     const timer = setTimeout(() => {
       let filtered = mockProducts;
       let filteredTwo = mockProductsTwo;
+      let filteredThree = mockProductsThree;
+
+      if (category) {
+        filtered = filtered.filter((item) => item.category === category);
+      }
 
       if (categoryTwo) {
         filteredTwo = filteredTwo.filter(
@@ -69,8 +95,10 @@ const useProducts = ({ category, categoryTwo, page, search }) => {
         );
       }
 
-      if (category) {
-        filtered = filtered.filter((item) => item.category === category);
+      if (categoryThree) {
+        filteredThree = filteredThree.filter(
+          (item) => item.categoryThree === categoryThree,
+        );
       }
 
       if (search) {
@@ -81,13 +109,14 @@ const useProducts = ({ category, categoryTwo, page, search }) => {
 
       setProducts(filtered);
       setProductsTwo(filteredTwo);
+      setProductsThree(filteredThree);
       setLoading(false);
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [category, categoryTwo, page, search]);
+  }, [category, categoryTwo, categoryThree, page, search]);
 
-  return { products, productsTwo, loading };
+  return { products, productsTwo, productsThree, loading };
 };
 
 export default useProducts;

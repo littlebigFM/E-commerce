@@ -21,13 +21,13 @@ const AppRoutes = () => {
     <Routes>
       {/* Auth routes (no sidebar/navbar) */}
       <Route element={<AuthLayout />}>
-        <Route path="/Login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/Register" element={<Register />} />
       </Route>
 
       {/* Main app routes (with sidebar/navbar) */}
       <Route element={<AppLayout />}>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/ProductsPage" element={<ProductsPage />} />
         <Route path="ProductsPage/AddProduct" element={<AddProduct />} />

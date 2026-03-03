@@ -1,6 +1,6 @@
 import React from "react";
 
-const TransactionDetail = ({ label, value, className }) => {
+const TransactionDetail = ({ label, value, className, action }) => {
   return (
     <div className="flex items-center gap-6">
       <p className="text-[14px] text-[#737373] dark:text-[#B0B0B0]">{label}</p>
@@ -9,6 +9,7 @@ const TransactionDetail = ({ label, value, className }) => {
       >
         {value}
       </p>
+      <div>{action}</div>
     </div>
   );
 };

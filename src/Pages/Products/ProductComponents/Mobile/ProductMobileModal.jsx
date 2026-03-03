@@ -1,5 +1,6 @@
 import React from "react";
 import Detail from "./Detail";
+import ProductActions from "../Desktop/ProductActions";
 
 const ProductMobileModal = ({ product, statusStyles }) => {
   return (
@@ -18,6 +19,8 @@ const ProductMobileModal = ({ product, statusStyles }) => {
           </span>
         }
       />
+
+      <Detail label="Action" value={<ProductActions />} />
     </div>
   );
 };

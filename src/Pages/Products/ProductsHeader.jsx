@@ -50,10 +50,9 @@ const ProductsHeader = ({ type }) => {
           </div>
         </div>
 
-        {type === "product" && (
-          <Link
-            to="/ProductsPage/AddProduct"
-            className="
+        <Link
+          to="/ProductsPage/AddProduct"
+          className="
         flex 
         items-center
         gap-1
@@ -64,51 +63,10 @@ const ProductsHeader = ({ type }) => {
         p-2
         cursor-pointer
         "
-          >
-            <p>New Product</p>
-            <FiPlus className="text-[20px]" />
-          </Link>
-        )}
-
-        {type === "transaction" && (
-          <Link
-            to="/transaction/AddProduct"
-            className="
-        flex 
-        items-center
-        gap-1
-        bg-[#1A71F6] 
-        text-[#FFFFFF] dark:text-[#F6F6F6]
-        rounded-[12px]
-        font-bold text-[12px]
-        p-2
-        cursor-pointer
-        "
-          >
-            <p>New Order</p>
-            <FiPlus className="text-[20px]" />
-          </Link>
-        )}
-
-        {type === "customer" && (
-          <Link
-            to="/customers/AddProduct"
-            className="
-        flex 
-        items-center
-        gap-1
-        bg-[#1A71F6] 
-        text-[#FFFFFF] dark:text-[#F6F6F6]
-        rounded-[12px]
-        font-bold text-[12px]
-        p-2
-        cursor-pointer
-        "
-          >
-            <p>Add Customer</p>
-            <FiPlus className="text-[20px]" />
-          </Link>
-        )}
+        >
+          <p>New Product</p>
+          <FiPlus className="text-[20px]" />
+        </Link>
       </div>
     </div>
   );
