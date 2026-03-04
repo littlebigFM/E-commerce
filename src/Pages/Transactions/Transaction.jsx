@@ -5,7 +5,6 @@ import useProducts from "./Hooks/useProduct";
 import TransactionTabs from "./TransactionComponents/Desktop/TransactionTabs";
 import TransactionTable from "./TransactionComponents/Desktop/TransactionTable";
 import TransactionCardList from "./TransactionComponents/Mobile/TransactionCardList";
-// import useProducts from "./../Hooks/useProduct";
 
 const Transaction = () => {
   // const [category, setCategory] = useState("Sneakers");

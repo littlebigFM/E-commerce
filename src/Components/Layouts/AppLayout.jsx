@@ -3,8 +3,6 @@ import { Outlet } from "react-router-dom";
 import useDarkMode from "@/Hook/DarkMode";
 import Navbar from "../StaticComponents/Navbar/Navbar";
 import Sidebar from "../StaticComponents/Sidebar/Desktop/Sidebar";
-import MobileSidebar from "../StaticComponents/Sidebar/Mobile/MobileSidebar";
-import AnimatedNavbar from "../StaticComponents/Navbar/AnimatedNavbar";
 
 const AppLayout = () => {
   const [isDark, setIsDark] = useDarkMode();
