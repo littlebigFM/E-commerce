@@ -49,9 +49,8 @@ const CustomerHeader = () => {
           </div>
         </div>
 
-        <Link
-          to="/Customers/AddProduct"
-          // onClick={navigate("/Customers/AddProduct")}
+        <div
+          onClick={() => navigate("/Customers/AddCustomer")}
           className="
         flex 
         items-center
@@ -66,7 +65,7 @@ const CustomerHeader = () => {
         >
           <p>Add Customer</p>
           <FiPlus className="text-[20px]" />
-        </Link>
+        </div>
       </div>
     </div>
   );

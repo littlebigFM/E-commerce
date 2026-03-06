@@ -96,7 +96,7 @@ const ProductImageUpload = ({ images, setImages, handleSubmit }) => {
 
       <div className="flex flex-col gap-2 min-[360px]:flex-row justify-between px-4">
         <Button
-          onClick={() => navigate("/ProductsPage")}
+          onClick={() => navigate(-1)}
           text="Discard Changes"
           className="
           border border-[#1A71F6] text-[#1A71F6] bg-[#FFFFFF] 

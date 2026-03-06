@@ -15,6 +15,7 @@ import Help from "../Pages/Help/Help";
 import AccountSettings from "../Pages/AccountSettings/AccountSettings";
 import ProductsPage from "../Pages/Products/ProductsPage";
 import AddProduct from "../Pages/Products/AddProduct/AddProduct";
+import AddCustomer from "../Pages/Customer/Addcustomer/AddCustomer";
 
 const AppRoutes = () => {
   return (
@@ -35,7 +36,7 @@ const AppRoutes = () => {
         <Route path="/Transaction" element={<Transaction />} />
         <Route path="Transaction/AddProduct" element={<AddProduct />} />
         <Route path="/Customers" element={<Customers />} />
-        <Route path="Customers/AddProduct" element={<AddProduct />} />
+        <Route path="Customers/AddCustomer" element={<AddCustomer />} />
         <Route path="/SalesReport" element={<SalesReport />} />
         <Route path="/Help" element={<Help />} />
         <Route path="/AccountSettings" element={<AccountSettings />} />

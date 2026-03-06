@@ -29,6 +29,7 @@ const ProductTabs = ({ category, onChange }) => {
             w-full
             font-bold
             cursor-pointer
+            text-[12px]
             ${
               category === tab.key
                 ? "bg-[#D9EDFF] text-[#1A71F6] dark:text- font-bold dark:bg-[#D9EDFF]"

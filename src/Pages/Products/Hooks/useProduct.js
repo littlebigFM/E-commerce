@@ -1,10 +1,12 @@
+import { image } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 const mockProducts = [
   {
     id: "SKU-001",
     name: "Nike Air Max",
-    image: "https://via.placeholder.com/40",
+    image: "",
+    // image: "https://picsum.photos/40/40?random=1",
     price: 120,
     size: "42",
     quantity: 10,
@@ -15,7 +17,8 @@ const mockProducts = [
   {
     id: "SKU-002",
     name: "Nike Air Max",
-    image: "https://via.placeholder.com/40",
+    image: "",
+    // image: "https://picsum.photos/40/40?random=2",
     price: 120,
     size: "42",
     quantity: 10,
@@ -27,7 +30,8 @@ const mockProducts = [
   {
     id: "SKU-003",
     name: "Adidas Hoodie",
-    image: "https://via.placeholder.com/40",
+    image: "",
+    // image: "https://picsum.photos/40/40?random=3",
     price: 80,
     size: "L",
     quantity: 5,
@@ -41,7 +45,8 @@ const mockProductsTwo = [
   {
     id: "SKU-01",
     name: "Adidas Hoodie",
-    image: "https://via.placeholder.com/40",
+    image: "",
+    // image: "https://picsum.photos/40/40?random=4",
     customer: "Leslie Alexander",
     price: 80,
     date: "2026/02/03",

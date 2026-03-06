@@ -115,18 +115,9 @@ const AddProduct = ({ type }) => {
         cursor-pointer
         w-[70px]
       "
-          onClick={() => navigate("/ProductsPage")}
+          onClick={() => navigate(-1)}
         >
           <IoMdArrowBack className="text-[16px]" />
-
-          {/* <button
-            className="
-        cursor-pointer
-        text-[12px]
-        "
-          >
-            Back
-          </button> */}
         </div>
 
         <div className="flex flex-col gap-2 min-[950px]:flex-row">

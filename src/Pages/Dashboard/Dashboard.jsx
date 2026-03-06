@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Stats from "./Statistics/Stats";
 import QuickAccess from "./QuickAccess";
 import SalesTarget from "./SalesTarget";
 import Description from "./Description";
 import Province from "./Province";
 import Products from "./ProductsEnquiry";
+import useAppContext from "../../Hook/useAppContext";
+// import useAppContext from "../Hook/useAppContext";
 
 const Home = () => {
+  const {
+    products,
+    productsLoading: loading,
+    productCategory: category,
+    setProductCategory: setCategory,
+    productSearch: search,
+    setProductSearch: setSearch,
+    productPage: page,
+    setProductPage: setPage,
+    fetchProducts,
+  } = useAppContext();
+
+  useEffect(() => {
+    fetchProducts({ category, page, search });
+  }, [category, page, search, fetchProducts]);
   return (
     <div
       className="
@@ -119,7 +136,7 @@ const Home = () => {
           <Province />
         </div>
         <div className="min-[1000px]:w-[50%]">
-          <Products />
+          <Products products={products} loading={loading} category={category} />
         </div>
       </div>
       {/* ======================================= */}

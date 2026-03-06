@@ -1,9 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { CiMail } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import img from "../../../../assets/Images/img2.png";
 
 const UserMenu = () => {
+  const navigate = useNavigate();
+
+  const handleAccountClick = () => {
+    navigate("/AccountSettings");
+  };
+
+  const handleNotificationClick = (e) => {
+    e.stopPropagation();
+    navigate("/AccountSettings", { state: { activeTab: "Notifications" } });
+  };
+
   return (
     <div
       className="
@@ -25,6 +37,9 @@ const UserMenu = () => {
         rounded-[9px]
         text-[22px] dark:text-[#F6F6F6]
         h-[32px]
+        cursor-pointer
+        hover:opacity-70
+        transition-opacity
         "
         >
           <CiMail />
@@ -36,7 +51,11 @@ const UserMenu = () => {
         rounded-[9px]
         text-[22px] dark:text-[#F6F6F6]
         h-[32px]
+        cursor-pointer
+        hover:opacity-70
+        transition-opacity
         "
+          onClick={handleNotificationClick}
         >
           <IoIosNotificationsOutline />
         </div>
@@ -45,7 +64,11 @@ const UserMenu = () => {
         className="
           flex gap-1
           justify-center items-center
+          cursor-pointer
+          hover:opacity-80
+          transition-opacity
           "
+        onClick={handleAccountClick}
       >
         <div>
           <img src={img} alt="" />

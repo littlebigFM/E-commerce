@@ -95,14 +95,30 @@ const ProductForm = ({ formData, handleChange, handleSubmit, loading }) => {
         </div>
 
         <div className="flex flex-col gap-2 w-full min-[1300px]:flex-row">
-          <Input
-            label="Product Category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            placeholder="Select product category"
-            className="w-full"
-          />
+          <div className="w-full flex flex-col">
+            <label className="text-[14px] font-bold text-[#323130] dark:text-[#F6F6F6] mb-2">
+              Product Category
+            </label>
+            <select
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              className="
+              px-4 py-3
+              border-[1.6px] border-[#D1D1D1] dark:border-[#3D3D3D]
+              rounded-[12px]
+              focus:outline-none 
+              w-full 
+              bg-white dark:bg-[#1A1A1B] dark:text-white
+              "
+            >
+              <option value="">Select product category</option>
+              <option value="Sneakers">Sneakers</option>
+              <option value="Jackets">Jackets</option>
+              <option value="T-shirts">T-shirts</option>
+              <option value="Bags">Bags</option>
+            </select>
+          </div>
           <Input
             label="Price"
             name="price"
@@ -122,14 +138,29 @@ const ProductForm = ({ formData, handleChange, handleSubmit, loading }) => {
             placeholder="Input Stock"
             className="w-full"
           />
-          <Input
-            label="Status Product"
-            name="status"
-            value={formData.status}
-            onChange={handleChange}
-            placeholder="Select status product"
-            className="w-full"
-          />
+          <div className="w-full flex flex-col">
+            <label className="text-[14px] font-bold text-[#323130] dark:text-[#F6F6F6] mb-2">
+              Status Product
+            </label>
+            <select
+              name="status"
+              value={formData.status}
+              onChange={handleChange}
+              className="
+              px-4 py-3
+              border-[1.6px] border-[#D1D1D1] dark:border-[#3D3D3D]
+              rounded-[12px]
+              focus:outline-none 
+              w-full 
+              bg-white dark:bg-[#1A1A1B] dark:text-white
+              "
+            >
+              <option value="">Select status product</option>
+              <option value="Available">Available</option>
+              <option value="Out of Stock">Out of Stock</option>
+              <option value="Discontinued">Discontinued</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
